@@ -1,0 +1,16 @@
+const express=require('express')
+const mongoose=require('mongoose')
+const route=require('./route')//app ne route no use karva mate
+
+//connectiong code to local mongodb
+
+mongoose.connect("mongodb://localhost:27017/Product",{useNewUrlParser:true,useUnifiedTopology:true}).then( //empis database name is database warning dooor karva topology
+    ()=>{
+        const app=express();
+        app.use("/api",route);//api no means e chhe like localhost:3000/api/books api na rakhi ne blank rako to pan
+        app.listen(3000, () => {
+            console.log('App listening on port 3000!');
+        });
+    }
+);//urlparser return a promise if promise complete then what happen it write in then jo promise fullfill na thay  to catch 
+//what is callback hell loop ni under loop means callback ni under callback evu na karvu pade to use async await
