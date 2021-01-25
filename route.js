@@ -2,6 +2,7 @@
 const express = require('express')
 
 const Products=require('./Model/book')//model no use kari ne ahiya thi data post k get karsu
+const stud=require('./Model/book')//model no use kari ne ahiya thi data post k get karsu
 
 const router=express.Router();//router no use kari ne kevanu k avo data fetch karo avo data post karo
 
