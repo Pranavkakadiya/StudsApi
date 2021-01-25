@@ -14,7 +14,7 @@ router.get("/products",async (req,res)=>{   //aa path game te chale singular plu
 
 router.get("/studs",async (req,res)=>{   //aa path game te chale singular plural or other  type is await becoz nodejs script run on asynchronous manner
 
-    const book=await studs.find();//u should await for result result ave chhe etle Products are name of collections
+    const book=await stud.find();//u should await for result result ave chhe etle Products are name of collections
     res.send(book);//save respons in book
 })
 
