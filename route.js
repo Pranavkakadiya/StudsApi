@@ -12,4 +12,10 @@ router.get("/products",async (req,res)=>{   //aa path game te chale singular plu
     res.send(book);//save respons in book
 })
 
+router.get("/studs",async (req,res)=>{   //aa path game te chale singular plural or other  type is await becoz nodejs script run on asynchronous manner
+
+    const book=await Products.find();//u should await for result result ave chhe etle Products are name of collections
+    res.send(book);//save respons in book
+})
+
 module.exports =router;
