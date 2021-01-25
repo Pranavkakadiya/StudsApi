@@ -4,11 +4,13 @@ const route=require('./route')//app ne route no use karva mate
 
 //connectiong code to local mongodb
 
-mongoose.connect("mongodb://localhost:27017/Product",{useNewUrlParser:true,useUnifiedTopology:true}).then( //empis database name is database warning dooor karva topology
+// mongoose.connect("mongodb://localhost:27017/Product",{useNewUrlParser:true,useUnifiedTopology:true}).then( //empis database name is database warning dooor karva topology
+mongoose.connect("mongodb+srv://pranav:12345@cluster0.mnb30.mongodb.net/Student?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true}).then( //empis database name is database warning dooor karva topology
     ()=>{
         const app=express();
         app.use("/api",route);//api no means e chhe like localhost:3000/api/books api na rakhi ne blank rako to pan
-        app.listen(3000, () => {
+        // app.listen(3000, () => {
+        app.listen(process.env.PORT || 3000, () => { //process.env.PORT use when u use live fetching Jevi processs e na environment no port fetch karse   then change in package .json file typr start:"node index" jethi ene  khabar pade k su strat karvu
             console.log('App listening on port 3000!');
         });
     }
