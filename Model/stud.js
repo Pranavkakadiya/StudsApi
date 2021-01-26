@@ -10,7 +10,7 @@ const schema =mongoose.Schema({
 
 //create a model
 
-module.exports=mongoose.model("Student",schema)//naming part for model in singular form  same like name databae name
+module.exports=mongoose.model("Stud",schema)//naming part for model in singular form  same like name databae name
 
 
 //like laravel
