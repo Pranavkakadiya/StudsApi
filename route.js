@@ -39,7 +39,7 @@ router.post('/studs', async (req, res) => {
         marks: req.body.marks,
         status: req.body.status,
         play: req.body.play,
-        birthday: Date(req.body.birthday).toString(),//birthday:newDate('Jan2,2001')
+        birthday: req.body.birthday,//birthday:newDate('Jan2,2001')
         media: req.body.media
     });
 
@@ -64,7 +64,8 @@ router.post('/products', async (req, res) => {
 
     const product = new Product({
         name: req.body.name,
-        qty: req.body.qty//jo ahiya 3rd filed pass karu to thay k na thay
+        qty: req.body.qty,//jo ahiya 3rd filed pass karu to thay k na thay
+        date: req.body.date
     });
 
     await product.save();//object enter thase db ma backend ma insertOne vali query fire thase 
@@ -97,6 +98,10 @@ router.patch("/products/:id", async (req, res) => {
         res.send({ error: "Post doesn't exist!" })
     }
 })
+
+//patch using findoneandUpdate
+
+
 
 //                                                          this is book local
 

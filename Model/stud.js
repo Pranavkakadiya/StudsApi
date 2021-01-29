@@ -3,15 +3,15 @@
 const mongoose = require('mongoose');
 //schema define
 const schema = mongoose.Schema({
-    s_id: String,
-    name: String,
-    email: String,
-    address: { city: String, state: String },
-    marks: { science: Number, chemistry: Number, maths: Number },
-    status: Boolean,
-    play: [String],
-    birthday: String,//birthday:newDate('Jan2,2001')
-    media: { youtube: Boolean, instagram: Boolean, snapchat: Boolean }
+    s_id: {type:String,required:true},
+    name: {type:String,required:true},
+    email: {type:String,required:true},
+    address: { city: {type:String}, state: {type:String} },
+    marks: { science: {type:Number}, chemistry: {type:Number}, maths: {type:Number} },
+    status: {type:Boolean},
+    play: {type:Array},
+    birthday: {type:Date},//birthday:newDate('Jan2,2001')
+    media: { youtube: {type:Boolean}, instagram: {type:Boolean}, snapchat: {type:Boolean} }
 })
 
 
