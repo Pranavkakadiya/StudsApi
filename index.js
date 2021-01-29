@@ -7,8 +7,8 @@ const body_parser = require('body-parser')
 //connectiong code to local mongodb
 
 // mongoose.connect("mongodb://localhost:27017/Books",{useNewUrlParser:true,useUnifiedTopology:true}).then( //empis database name is database warning dooor karva topology
-// mongoose.connect("mongodb://localhost:27017/Product", { useNewUrlParser: true, useUnifiedTopology: true }).then( //empis database name is database warning dooor karva topology
-mongoose.connect("mongodb+srv://pranav:12345@cluster0.mnb30.mongodb.net/Student?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then( //empis database name is database warning dooor karva topology
+mongoose.connect("mongodb://localhost:27017/Product", { useNewUrlParser: true, useUnifiedTopology: true }).then( //empis database name is database warning dooor karva topology
+// mongoose.connect("mongodb+srv://pranav:12345@cluster0.mnb30.mongodb.net/Student?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then( //empis database name is database warning dooor karva topology
     () => {
         const app = express();
         app.use(body_parser.urlencoded({ extends: true }))

@@ -9,7 +9,7 @@ const schema = mongoose.Schema({
     address: { city: {type:String}, state: {type:String} },
     marks: { science: {type:Number}, chemistry: {type:Number}, maths: {type:Number} },
     status: {type:Boolean},
-    play: [String],
+    play: {type:Array},
     birthday: {type:Date},
     media: { youtube: {type:Boolean}, instagram: {type:Boolean}, snapchat: {type:Boolean} }
 })

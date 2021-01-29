@@ -65,7 +65,9 @@ router.post('/products', async (req, res) => {
     const product = new Product({
         name: req.body.name,
         qty: req.body.qty,//jo ahiya 3rd filed pass karu to thay k na thay
-        date: req.body.date
+        date: req.body.date,
+        play: req.body.play,
+        mark: req.body.mark
     });
 
     await product.save();//object enter thase db ma backend ma insertOne vali query fire thase 
