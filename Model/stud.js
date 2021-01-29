@@ -3,9 +3,9 @@
 const mongoose = require('mongoose');
 //schema define
 const schema = mongoose.Schema({
-    s_id: {type:String,required:true},
-    name: {type:String,required:true},
-    email: {type:String,required:true},
+    s_id: {type:String},
+    name: {type:String},
+    email: {type:String},
     address: { city: {type:String}, state: {type:String} },
     marks: { science: {type:Number}, chemistry: {type:Number}, maths: {type:Number} },
     status: {type:Boolean},
