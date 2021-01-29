@@ -32,15 +32,15 @@ router.post('/studs', async (req, res) => {
     const stud = new Stud({
         // name:req.body.name,
         // qty:req.body.qty,//jo ahiya 3rd filed pass karu to thay k na thay
-        s_id: req.body.s_id,
+        //s_id: req.body.s_id,
         name: req.body.name,
-        email: req.body.email,
-        address: req.body.address,
-        marks: req.body.marks,
-        status: req.body.status,
-        play: req.body.play,
-        birthday: req.body.birthday,//birthday:newDate('Jan2,2001')
-        media: req.body.media
+        email: req.body.email
+        // address: req.body.address,
+        // marks: req.body.marks,
+        // status: req.body.status,
+        // play: req.body.play,
+        // birthday: req.body.birthday,//birthday:newDate('Jan2,2001')
+        // media: req.body.media
     });
 
     await stud.save();//object enter thase db ma backend ma insertOne vali query fire thase 
