@@ -10,7 +10,7 @@ const schema = mongoose.Schema({
     marks: { science: {type:Number}, chemistry: {type:Number}, maths: {type:Number} },
     status: {type:Boolean},
     play: {type:Array},
-    birthday: {type:Date},//birthday:newDate('Jan2,2001')
+    birthday: {type:Date},
     media: { youtube: {type:Boolean}, instagram: {type:Boolean}, snapchat: {type:Boolean} }
 })
 
