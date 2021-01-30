@@ -7,8 +7,8 @@ const body_parser = require('body-parser')
 
 
 // mongoose.connect("mongodb://localhost:27017/Books",{useNewUrlParser:true,useUnifiedTopology:true}).then( 
-mongoose.connect("mongodb://localhost:27017/Product", { useNewUrlParser: true, useUnifiedTopology: true }).then( 
-// mongoose.connect("mongodb+srv://pranav:12345@cluster0.mnb30.mongodb.net/Student?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then( 
+// mongoose.connect("mongodb://localhost:27017/Product", { useNewUrlParser: true, useUnifiedTopology: true }).then( 
+mongoose.connect("mongodb+srv://pranav:12345@cluster0.mnb30.mongodb.net/Student?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then( 
     () => {
         const app = express();
         app.use(body_parser.urlencoded({ extends: true }))
