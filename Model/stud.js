@@ -1,7 +1,6 @@
-//create a schema using mongoose
 
 const mongoose = require('mongoose');
-//schema define
+
 const schema = mongoose.Schema({
     s_id: {type:String},
     name: {type:String},
@@ -15,12 +14,7 @@ const schema = mongoose.Schema({
 })
 
 
-//create a model
 
-module.exports = mongoose.model("Stud", schema)//naming part for model in singular form  same like name databae name
+module.exports = mongoose.model("Stud", schema)
 
 
-//like laravel
-
-// model name is Book
-// Collection name is Books plural form
