@@ -29,20 +29,25 @@ router.get("/studs", async (req, res) => {
 
 router.post('/studs', async (req, res) => {
 
-    const stud = new Stud({
-        // s_id: req.body.s_id,
-        name: req.body.name,
-        email: req.body.email
-        // address: req.body.address,
-        // marks: req.body.marks,
-        // status: req.body.status,
-        // play: req.body.play,
-        // birthday: req.body.birthday,
-        // media: req.body.media
-    });
-
-    await stud.save();
-    res.send(stud);
+    try {
+        const stud = new Stud({
+            // s_id: req.body.s_id,
+            name: req.body.name,
+            email: req.body.email
+            // address: req.body.address,
+            // marks: req.body.marks,
+            // status: req.body.status,
+            // play: req.body.play,
+            // birthday: req.body.birthday,
+            // media: req.body.media
+        });
+    
+        await stud.save();
+        res.send(stud);
+    } catch (error) {
+        res.send(error)
+    }
+    
 })
 
 router.delete('/studs/:id', async (req, res) => {
