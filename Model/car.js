@@ -21,8 +21,8 @@ const schema = mongoose.Schema({
         youtube:{type:Boolean},
         facebook:{type:Boolean},
         instagram:{type:Boolean}
-    }
-    // sub:{type:Object}
+    },
+    achievement:{type:Object}
 },{timestamps:true})
 
 

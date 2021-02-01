@@ -182,7 +182,8 @@ router.post('/cars', async (req, res) => {
         marks:req.body.marks,
         active:req.body.active,
         birthdate:req.body.birthdate,
-        media:req.body.media
+        media:req.body.media,
+        achievement:req.body.achievement
         // sub:req.body.sub
     });
 
@@ -203,23 +204,35 @@ router.delete('/cars/:id', async (req, res) => {
 router.patch("/cars/:id", async (req, res) => {
     try {
         const post = await Car.findOne({ _id: req.params.id })
+        if (req.body.s_id) {
+            post.s_id = req.body.s_id
+        }
         if (req.body.name) {
             post.name = req.body.name
         }
-        if (req.body.price) {
-            post.price = req.body.price
+        if (req.body.email) {
+            post.email = req.body.email
         }
-        if (req.body.access) {
-            post.access = req.body.access
+        if (req.body.active) {
+            post.active = req.body.active
         }
-        if (req.body.modify) {
-            post.modify = req.body.modify
+        if (req.body.birthdate) {
+            post.birthdate = req.body.birthdate
         }
-        if (req.body.release) {
-            post.release = req.body.release
+        if (req.body.address) {
+            post.address = req.body.address
         }
-        if (req.body.sub) {
-            post.sub = req.body.sub
+        if (req.body.marks) {
+            post.marks = req.body.marks
+        }
+        if (req.body.media) {
+            post.media = req.body.media
+        }
+        if (req.body.play) {
+            post.play = req.body.play
+        }
+        if (req.body.achievement) {
+            post.achievement = req.body.achievement
         }
         await post.save()
         res.send(post)
