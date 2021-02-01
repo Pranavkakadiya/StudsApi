@@ -9,7 +9,8 @@ const schema = mongoose.Schema({
     modify:{
         bike:{type:Boolean},
         car:{type:Boolean}
-    }
+    },
+    release: {type:Date}
     // address: { city: {type:String}, state: {type:String} },
     // marks: { science: {type:Number}, chemistry: {type:Number}, maths: {type:Number} },
     // status: {type:Boolean},
