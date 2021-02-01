@@ -175,7 +175,8 @@ router.post('/cars', async (req, res) => {
 
     const car1 = new Car({
         name: req.body.name,
-        price: req.body.price
+        price: req.body.price,
+        access:req.body.access
     });
 
     await car1.save();
