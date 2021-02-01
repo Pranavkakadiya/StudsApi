@@ -193,6 +193,29 @@ router.delete('/cars/:id', async (req, res) => {
     }
 
 })
+router.patch("/cars/:id", async (req, res) => {
+    try {
+        const post = await Car.findOne({ _id: req.params.id })
+        if (req.body.name) {
+            post.name = req.body.name
+        }
+        if (req.body.price) {
+            post.price = req.body.price
+        }
+        if (req.body.access) {
+            post.access = req.body.access
+        }
+        if (req.body.modify) {
+            post.modify = req.body.modify
+        }
+        await post.save()
+        res.send(post)
+    } catch {
+        res.status(404)
+        res.send({ error: "Post doesn't exist!" })
+    }
+    
+})
 
 
 

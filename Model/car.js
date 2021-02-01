@@ -5,7 +5,11 @@ const schema = mongoose.Schema({
     // s_id: {type:String},
     name: {type:String},
     price: {type:Number},
-    access: {type:Array}
+    access: {type:Array},
+    modify:{
+        bike:{type:Boolean},
+        car:{type:Boolean}
+    }
     // address: { city: {type:String}, state: {type:String} },
     // marks: { science: {type:Number}, chemistry: {type:Number}, maths: {type:Number} },
     // status: {type:Boolean},
