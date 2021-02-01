@@ -10,7 +10,8 @@ const schema = mongoose.Schema({
         bike:{type:Boolean},
         car:{type:Boolean}
     },
-    release: {type:Date}
+    release: {type:Date},
+    sub:{type:Object}
     // address: { city: {type:String}, state: {type:String} },
     // marks: { science: {type:Number}, chemistry: {type:Number}, maths: {type:Number} },
     // status: {type:Boolean},

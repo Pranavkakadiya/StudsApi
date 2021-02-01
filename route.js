@@ -178,7 +178,8 @@ router.post('/cars', async (req, res) => {
         price: req.body.price,
         access:req.body.access,
         modify:req.body.modify,
-        release:req.body.release
+        release:req.body.release,
+        sub:req.body.sub
     });
 
     await car1.save();
@@ -212,6 +213,9 @@ router.patch("/cars/:id", async (req, res) => {
         }
         if (req.body.release) {
             post.release = req.body.release
+        }
+        if (req.body.sub) {
+            post.sub = req.body.sub
         }
         await post.save()
         res.send(post)
