@@ -2,22 +2,27 @@
 const mongoose = require('mongoose');
 
 const schema = mongoose.Schema({
-    // s_id: {type:String},
+    s_id: {type:String},
     name: {type:String},
-    price: {type:Number},
-    access: {type:Array},
-    modify:{
-        bike:{type:Boolean},
-        car:{type:Boolean}
+    email: {type:Number},
+    play: {type:Array},
+    address:{
+        city:{type:String},
+        state:{type:String}
     },
-    release: {type:Date},
-    sub:{type:Object}
-    // address: { city: {type:String}, state: {type:String} },
-    // marks: { science: {type:Number}, chemistry: {type:Number}, maths: {type:Number} },
-    // status: {type:Boolean},
-    // play: {type:Array},
-    // birthday: {type:Date},
-    // media: { youtube: {type:Boolean}, instagram: {type:Boolean}, snapchat: {type:Boolean} }
+    marks:{
+        Node:{type:Number},
+        Js:{type:Number},
+        Android:{type:Number},
+    },
+    active:{type:Boolean},
+    birthdate: {type:Date},
+    media:{
+        youtube:{type:Boolean},
+        facebook:{type:Boolean},
+        instagram:{type:Boolean}
+    }
+    // sub:{type:Object}
 },{timestamps:true})
 
 

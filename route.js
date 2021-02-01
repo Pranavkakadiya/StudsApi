@@ -174,12 +174,16 @@ router.delete('/books/:id', async (req, res) => {
 router.post('/cars', async (req, res) => {
 
     const car1 = new Car({
+        s_id: req.body.s_id,
         name: req.body.name,
-        price: req.body.price,
-        access:req.body.access,
-        modify:req.body.modify,
-        release:req.body.release,
-        sub:req.body.sub
+        email: req.body.email,
+        play:req.body.play,
+        address:req.body.address,
+        marks:req.body.marks,
+        active:req.body.active,
+        birthdate:req.body.birthdate,
+        media:req.body.media
+        // sub:req.body.sub
     });
 
     await car1.save();
