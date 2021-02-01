@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema({
     s_id: {type:String},
     name: {type:String},
-    email: {type:Number},
+    email: {type:String},
     play: {type:Array},
     address:{
         city:{type:String},
