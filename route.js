@@ -4,6 +4,7 @@ const express = require('express')
 const Product = require('./Model/product')
 const Book = require('./Model/book')
 const Student = require('./Model/stud')
+const Car = require('./Model/car')
 
 const router = express.Router();
 
@@ -23,6 +24,11 @@ router.get("/studs", async (req, res) => {
 
     const book2 = await Student.find();
     res.send(book2);
+})
+router.get("/cars", async (req, res) => {   
+
+    const car1 = await Car.find();
+    res.send(car1);
 })
 
 //                                                          this is Studnt online
@@ -87,6 +93,7 @@ router.delete('/products/:id', async (req, res) => {
     }
 
 })
+
 router.patch("/products/:id", async (req, res) => {
     try {
         const post = await Product.findOne({ _id: req.params.id })
@@ -95,6 +102,15 @@ router.patch("/products/:id", async (req, res) => {
         }
         if (req.body.qty) {
             post.qty = req.body.qty
+        }
+        if (req.body.date) {
+            post.date = req.body.date
+        }
+        if (req.body.play) {
+            post.play = req.body.play
+        }
+        if (req.body.mark) {
+            post.mark = req.body.mark
         }
         await post.save()
         res.send(post)
@@ -154,7 +170,41 @@ router.delete('/books/:id', async (req, res) => {
 })
 
 
+//local car online
+router.post('/cars', async (req, res) => {
+
+    const car1 = new Car({
+        name: req.body.name,
+        price: req.body.price
+    });
+
+    await car1.save();
+    res.send(car1);
+})
+
+router.delete('/cars/:id', async (req, res) => {
+    try {
+        await Car.deleteOne({ _id: req.params.id });
+        res.status(200).send("deleted")
+    } catch (error) {
+        res.status(404)
+        res.send("Id is not found or It already deleted")
+    }
+
+})
+
+
+
 module.exports = router;
 
 
 
+// POST - create
+
+// PUT - replace
+
+// PATCH - update
+
+// GET - read
+
+// DELETE - delete
